@@ -8,7 +8,8 @@ package com.mycompany.pocprestamos;
  *
  * @author AyLZz
  */
-public class POCPrestamos {
+public class POCPrestamos 
+{
 
     
     
