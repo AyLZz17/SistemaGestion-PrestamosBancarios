@@ -1,6 +1,11 @@
 package com.mycompany.model;
 
-public class PrestamoHipotecario extends Prestamo
+/**
+ *
+ * @author AyLZz
+ */
+
+public class PrestamoHipotecario extends Prestamo implements IAsegurableHipoteca
 {
     
     private String tipoInmueble;
@@ -31,6 +36,12 @@ public class PrestamoHipotecario extends Prestamo
     }
 
     @Override
+    public double calcularSeguro() {
+        // TODO: Implementación del cálculo del seguro
+        return 0;
+    }
+
+    @Override
     public double calcularCuotaMensual() 
     {
 
@@ -43,7 +54,7 @@ public class PrestamoHipotecario extends Prestamo
                 return monto / plazoMeses;
             }
             
-            return (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazoMeses));
+            return ((monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazoMeses))) + calcularSeguro();
 
         } catch (Exception e) {
             System.err.println("Error al calcular la cuota mensual: " + e.getMessage());

@@ -1,5 +1,10 @@
 package com.mycompany.model;
 
+/**
+ *
+ * @author AyLZz
+ */
+
 public class PrestamoVehicular extends Prestamo
 {
     private double valorComercial;

@@ -1,5 +1,10 @@
 package com.mycompany.model;
 
+/**
+ *
+ * @author AyLZz
+ */
+
 import java.time.LocalDate;
 
 public abstract class Prestamo 
