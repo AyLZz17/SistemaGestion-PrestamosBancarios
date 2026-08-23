@@ -9,12 +9,22 @@ public class PrestamoVehicular extends Prestamo
 {
     private double valorComercial;
     private String marcaVehiculo;
+    private TarjetaPropiedad tarjetaPropiedad;
 
     public PrestamoVehicular(int idPrestamo, double monto, double tasaIntereses, int plazoMeses, double valorComercial, String marcaVehiculo) 
+    {
+        this(idPrestamo, monto, tasaIntereses, plazoMeses, valorComercial,
+                marcaVehiculo, null);
+    }
+
+    public PrestamoVehicular(int idPrestamo, double monto, double tasaIntereses,
+            int plazoMeses, double valorComercial, String marcaVehiculo,
+            TarjetaPropiedad tarjetaPropiedad)
     {
         super(idPrestamo, monto, tasaIntereses, plazoMeses, null);
         this.valorComercial = valorComercial;
         this.marcaVehiculo = marcaVehiculo;
+        this.tarjetaPropiedad = tarjetaPropiedad;
     }
 
     public double getValorComercial() {
@@ -31,6 +41,14 @@ public class PrestamoVehicular extends Prestamo
 
     public void setMarcaVehiculo(String marcaVehiculo) {
         this.marcaVehiculo = marcaVehiculo;
+    }
+
+    public TarjetaPropiedad getTarjetaPropiedad() {
+        return tarjetaPropiedad;
+    }
+
+    public void setTarjetaPropiedad(TarjetaPropiedad tarjetaPropiedad) {
+        this.tarjetaPropiedad = tarjetaPropiedad;
     }
 
     @Override

@@ -75,7 +75,7 @@ public abstract class Prestamo
         this.fechaRegistro = fechaRegistro;
     }
 
-
+    // Se usa una clase abstacta un un metodo abstracto para poder manejar la forma de seguros en este metodo en clases que lo requieran
     public abstract double calcularCuotaMensual();
     
 
