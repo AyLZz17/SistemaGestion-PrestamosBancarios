@@ -37,10 +37,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        mnuCrear = new javax.swing.JMenuItem();
+        mnuListar = new javax.swing.JMenuItem();
+        mnuBuscar = new javax.swing.JMenuItem();
+        mnuEliminar = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -70,37 +70,37 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jMenu4.setText("Prestamo Hipotecario");
 
-        jMenuItem4.setText("Crear");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        mnuCrear.setText("Crear");
+        mnuCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                mnuCrearActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        jMenu4.add(mnuCrear);
 
-        jMenuItem5.setText("Listar");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        mnuListar.setText("Listar");
+        mnuListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                mnuListarActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        jMenu4.add(mnuListar);
 
-        jMenuItem6.setText("Buscar");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        mnuBuscar.setText("Buscar");
+        mnuBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                mnuBuscarActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
+        jMenu4.add(mnuBuscar);
 
-        jMenuItem7.setText("Eliminar");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        mnuEliminar.setText("Eliminar");
+        mnuEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                mnuEliminarActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem7);
+        jMenu4.add(mnuEliminar);
 
         jMenuBar2.add(jMenu4);
 
@@ -140,28 +140,28 @@ public class GUIPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        JOptionPane.showMessageDialog(this, "Desarrollado por Juan Pablo Valbuena, Andres Felipe Sanchez y Andres");
+        JOptionPane.showMessageDialog(this, "Desarrollado por Juan Pablo Valbuena, Andres Felipe Sanchez y Daniel Ayala");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void mnuCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCrearActionPerformed
         GUIAddHipotecario gui = new GUIAddHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_mnuCrearActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void mnuListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuListarActionPerformed
         GUIListarHipotecario gui = new GUIListarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_mnuListarActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void mnuBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBuscarActionPerformed
         GUIBuscarHipotecario gui = new GUIBuscarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_mnuBuscarActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void mnuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEliminarActionPerformed
         GUIEliminarHipotecario gui = new GUIEliminarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_mnuEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,9 +210,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem mnuBuscar;
+    private javax.swing.JMenuItem mnuCrear;
+    private javax.swing.JMenuItem mnuEliminar;
+    private javax.swing.JMenuItem mnuListar;
     // End of variables declaration//GEN-END:variables
 }

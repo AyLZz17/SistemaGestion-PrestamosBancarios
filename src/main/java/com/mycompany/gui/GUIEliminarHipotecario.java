@@ -4,8 +4,10 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.model.PrestamoHipotecario;
 import javax.swing.JOptionPane;
+
+import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.model.PrestamoHipotecario;
 
 /**
  *
@@ -30,12 +32,27 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtIdPrestamoHipotecario = new javax.swing.JTextField();
+        txtIdVehicular = new javax.swing.JTextField();
         btnEliminarHipotecario = new javax.swing.JButton();
+        btnBuscarEliminar = new javax.swing.JButton();
+        txtMontoPrestamo = new javax.swing.JTextField();
+        txtPlazoPrestamo = new javax.swing.JTextField();
+        txtTipoInmueble = new javax.swing.JTextField();
+        txtDireccionInmueble = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GUI Eliminar Prestamo Hipotecario");
+
+        jLabel3.setText("Plazo del prestamo:");
+
+        jLabel4.setText("Tipo Inmueble:");
+
+        jLabel5.setText("Direccion Inmueble:");
 
         jLabel1.setText("ID del Prestamo:");
 
@@ -46,30 +63,89 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
             }
         });
 
+        btnBuscarEliminar.setText("Buscar");
+        btnBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEliminarActionPerformed(evt);
+            }
+        });
+
+        txtMontoPrestamo.setEditable(false);
+
+        txtPlazoPrestamo.setEditable(false);
+        txtPlazoPrestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPlazoPrestamoActionPerformed(evt);
+            }
+        });
+
+        txtTipoInmueble.setEditable(false);
+
+        txtDireccionInmueble.setEditable(false);
+        txtDireccionInmueble.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionInmuebleActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Monto Prestamo:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEliminarHipotecario)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(27, 27, 27)
-                        .addComponent(txtIdPrestamoHipotecario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtMontoPrestamo)
+                            .addComponent(txtPlazoPrestamo)
+                            .addComponent(txtTipoInmueble)
+                            .addComponent(txtDireccionInmueble)
+                            .addComponent(txtIdVehicular, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscarEliminar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(btnEliminarHipotecario)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtIdVehicular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscarEliminar))
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtIdPrestamoHipotecario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtMontoPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPlazoPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTipoInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDireccionInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
                 .addComponent(btnEliminarHipotecario)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,41 +154,73 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
     private void btnEliminarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarHipotecarioActionPerformed
 
         // 1. Validar que el campo no esté vacío
-        if (txtIdPrestamoHipotecario.getText().equals("")) {
+        if (txtIdVehicular.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "El Campo de ID del Préstamo es obligatorio");
             return;
         }
 
         try {
-            // 2. Buscar el préstamo por ID para ver si existe
-            PrestamoHipotecario prestamo = ServicioPrestamo.buscarPrestamo(Integer.parseInt(txtIdPrestamoHipotecario.getText()));
+            // 2. Eliminar el préstamo por ID
+            ServicioPrestamoHipotecario prestamoHipotecarioService = new ServicioPrestamoHipotecario();
+            boolean eliminado = prestamoHipotecarioService.eliminar(Integer.parseInt(txtIdVehicular.getText().trim()));
 
-            if (prestamo != null) {
-
-                // 3. Intentar eliminar el préstamo usando el método del servicio
-                boolean centinela = ServicioPrestamo.eliminarPrestamo(Integer.parseInt(txtIdPrestamoHipotecario.getText()));
-
-                if (centinela) {
-
-                    JOptionPane.showMessageDialog(this, "Préstamo Hipotecario Eliminado con Éxito");
-                    txtIdPrestamoHipotecario.setText(""); // Limpiamos el campo de texto
-
-                } else {
-
-                    JOptionPane.showMessageDialog(this, "Préstamo Hipotecario no Encontrado/Registrado");
-
-                }
-
+            if (eliminado) {
+                JOptionPane.showMessageDialog(this, "Préstamo Hipotecario eliminado exitosamente");
+                // Limpiar los campos de texto después de eliminar
+                txtMontoPrestamo.setText("");
+                txtPlazoPrestamo.setText("");
+                txtTipoInmueble.setText("");
+                txtDireccionInmueble.setText("");
+                
             } else {
-
-                JOptionPane.showMessageDialog(this, "No se Encontró ese Préstamo Hipotecario");
-
+                JOptionPane.showMessageDialog(this, "No se pudo eliminar el Préstamo Hipotecario");
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al eliminar: " + e.getMessage());
+                JOptionPane.showMessageDialog(this,
+                    new StringBuilder("Error al eliminar: ").append(e.getMessage()).toString());
         }
+
     }//GEN-LAST:event_btnEliminarHipotecarioActionPerformed
+
+    private void btnBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarActionPerformed
+
+        // 1. Validar que el campo no esté vacío
+        if (txtIdVehicular.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "El Campo de ID del Préstamo es obligatorio");
+            return;
+        }
+
+        try {
+            // 2. Buscar el préstamo por ID
+            ServicioPrestamoHipotecario prestamoHipotecarioService = new ServicioPrestamoHipotecario();
+            PrestamoHipotecario prestamo = prestamoHipotecarioService.buscarPorId(Integer.parseInt(txtIdVehicular.getText().trim()));
+
+            if (prestamo != null) {
+                // 3. Mostrar los detalles del préstamo en los campos de texto
+                
+                txtMontoPrestamo.setText(String.valueOf(prestamo.getMonto()));
+                txtPlazoPrestamo.setText(String.valueOf(prestamo.getPlazoMeses()));
+                txtTipoInmueble.setText(String.valueOf(prestamo.getTipoInmueble()));
+                txtDireccionInmueble.setText(prestamo.getDireccionInmueble());
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "No se Encontró ese Préstamo Hipotecario    ");
+            }
+
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(this,
+                    new StringBuilder("Error al buscar: ").append(e.getMessage()).toString());
+        }
+    }//GEN-LAST:event_btnBuscarEliminarActionPerformed
+
+    private void txtPlazoPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlazoPrestamoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPlazoPrestamoActionPerformed
+
+    private void txtDireccionInmuebleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionInmuebleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionInmuebleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,8 +258,17 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarEliminar;
     private javax.swing.JButton btnEliminarHipotecario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtIdPrestamoHipotecario;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtDireccionInmueble;
+    private javax.swing.JTextField txtIdVehicular;
+    private javax.swing.JTextField txtMontoPrestamo;
+    private javax.swing.JTextField txtPlazoPrestamo;
+    private javax.swing.JTextField txtTipoInmueble;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,7 @@
 package com.mycompany.model;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author AyLZz
@@ -11,17 +13,11 @@ public class PrestamoVehicular extends Prestamo
     private String marcaVehiculo;
     private TarjetaPropiedad tarjetaPropiedad;
 
-    public PrestamoVehicular(int idPrestamo, double monto, double tasaIntereses, int plazoMeses, double valorComercial, String marcaVehiculo) 
-    {
-        this(idPrestamo, monto, tasaIntereses, plazoMeses, valorComercial,
-                marcaVehiculo, null);
-    }
+    
 
-    public PrestamoVehicular(int idPrestamo, double monto, double tasaIntereses,
-            int plazoMeses, double valorComercial, String marcaVehiculo,
-            TarjetaPropiedad tarjetaPropiedad)
-    {
-        super(idPrestamo, monto, tasaIntereses, plazoMeses, null);
+    public PrestamoVehicular(int idPrestamo, double monto, double tasaIntereses, int plazoMeses,
+            LocalDate fechaRegistro, double valorComercial, String marcaVehiculo, TarjetaPropiedad tarjetaPropiedad) {
+        super(idPrestamo, monto, tasaIntereses, plazoMeses, fechaRegistro);
         this.valorComercial = valorComercial;
         this.marcaVehiculo = marcaVehiculo;
         this.tarjetaPropiedad = tarjetaPropiedad;
@@ -67,7 +63,7 @@ public class PrestamoVehicular extends Prestamo
             return (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazoMeses));
 
         } catch (Exception e) {
-            System.err.println("Error al calcular la cuota mensual: " + e.getMessage());
+            System.err.println("Error al calcular la cuota mensual.");
             return 0;
         }   
     }

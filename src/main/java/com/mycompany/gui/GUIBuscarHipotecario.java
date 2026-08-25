@@ -35,14 +35,12 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtIdPrestamo = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
         txtTasaInteres = new javax.swing.JTextField();
         txtPlazoMeses = new javax.swing.JTextField();
-        txtFecha = new javax.swing.JTextField();
         txtTipoInmueble = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         btnBuscarHipotecario = new javax.swing.JButton();
@@ -58,8 +56,6 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
 
         jLabel4.setText("Plazo de Meses:");
 
-        jLabel5.setText("Fecha de Registro: ");
-
         jLabel6.setText("Tipo de Inmueble:");
 
         jLabel7.setText("Direccion del Inmueble:");
@@ -69,8 +65,6 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
         txtTasaInteres.setEditable(false);
 
         txtPlazoMeses.setEditable(false);
-
-        txtFecha.setEditable(false);
 
         txtTipoInmueble.setEditable(false);
 
@@ -102,15 +96,13 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel4)
-                                .addComponent(jLabel5)
                                 .addComponent(jLabel6))
-                            .addGap(44, 44, 44)
+                            .addGap(47, 47, 47)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtIdPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                                 .addComponent(txtMonto)
                                 .addComponent(txtTasaInteres)
                                 .addComponent(txtPlazoMeses)
-                                .addComponent(txtFecha)
                                 .addComponent(txtTipoInmueble)))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -135,17 +127,13 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
                     .addComponent(txtPlazoMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtTipoInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(40, 40, 40)
                 .addComponent(btnBuscarHipotecario)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
@@ -163,7 +151,6 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
             txtMonto.setText(String.valueOf(prestamo.getMonto()));
             txtTasaInteres.setText(String.valueOf(prestamo.getTasaIntereses()));
             txtPlazoMeses.setText(String.valueOf(prestamo.getPlazoMeses()));
-            txtFecha.setText(String.valueOf(prestamo.getFechaRegistro()));
             txtTipoInmueble.setText(prestamo.getTipoInmueble());
             txtDireccion.setText(prestamo.getDireccionInmueble());
 
@@ -215,11 +202,9 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtIdPrestamo;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtPlazoMeses;

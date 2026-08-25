@@ -13,7 +13,7 @@ import com.mycompany.model.PrestamoHipotecario;
  */
 public class ServicioPrestamoHipotecario {
 
-    private final Map<Integer, PrestamoHipotecario> prestamosHipotecarios = new LinkedHashMap<>();
+    private static final Map<Integer, PrestamoHipotecario> prestamosHipotecarios = new LinkedHashMap<>();
 
    
     public void agregarPrestamoHipotecario(PrestamoHipotecario prestamoHipotecario) {

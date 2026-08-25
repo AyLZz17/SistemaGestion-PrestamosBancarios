@@ -37,11 +37,9 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
         txtTasaInteres = new javax.swing.JTextField();
         txtPlazoMeses = new javax.swing.JTextField();
-        txtFecha = new javax.swing.JTextField();
         btnAddHipotecario = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -58,8 +56,6 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
         jLabel3.setText("Tasa de Interes:");
 
         jLabel4.setText("Plazo de Meses:");
-
-        jLabel5.setText("Fecha de Registro: ");
 
         btnAddHipotecario.setText("Crear Prestamo Hipotecario");
         btnAddHipotecario.addActionListener(new java.awt.event.ActionListener() {
@@ -94,16 +90,14 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdPrestamo)
+                            .addComponent(txtIdPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                             .addComponent(txtMonto)
                             .addComponent(txtTasaInteres)
                             .addComponent(txtPlazoMeses)
-                            .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                             .addComponent(txtTipoInmueble)
                             .addComponent(txtDireccionInmueble))))
                 .addGap(61, 61, 61))
@@ -129,17 +123,13 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
                     .addComponent(txtPlazoMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtTipoInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtDireccionInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(46, 46, 46)
                 .addComponent(btnAddHipotecario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,7 +147,6 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
         double monto;
         double tasaInteres;
         int plazoMeses;
-        LocalDate fechaRegistro;
 
         String tipoInmueble;
         String direccionInmueble;
@@ -169,7 +158,7 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             String strMonto = txtMonto.getText().trim();
             String strTasa = txtTasaInteres.getText().trim();
             String strPlazo = txtPlazoMeses.getText().trim();
-            String strFecha = txtFecha.getText().trim();
+            
 
             tipoInmueble = txtTipoInmueble.getText().trim();
             direccionInmueble = txtDireccionInmueble.getText().trim();
@@ -178,7 +167,7 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             monto = Double.parseDouble(strMonto);
             tasaInteres = Double.parseDouble(strTasa);
             plazoMeses = Integer.parseInt(strPlazo);
-            fechaRegistro = LocalDate.parse(strFecha);
+            
 
             prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, tipoInmueble, direccionInmueble);
 
@@ -191,12 +180,13 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             txtMonto.setText("");
             txtTasaInteres.setText("");
             txtPlazoMeses.setText("");
-            txtFecha.setText("");
             txtTipoInmueble.setText("");
             txtDireccionInmueble.setText("");
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al crear el prestamo hipotecario: " + e);
+            StringBuilder mensaje = new StringBuilder("Error al crear el prestamo hipotecario: ");
+            mensaje.append(e);
+            JOptionPane.showMessageDialog(this, mensaje.toString());
         }
     }//GEN-LAST:event_btnAddHipotecarioActionPerformed
 
@@ -241,11 +231,9 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtDireccionInmueble;
-    private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtIdPrestamo;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtPlazoMeses;

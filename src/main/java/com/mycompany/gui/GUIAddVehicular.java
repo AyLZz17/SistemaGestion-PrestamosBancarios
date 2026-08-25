@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import com.mycompany.Services.ServicioPrestamoVehicular;
 import com.mycompany.model.PrestamoVehicular;
+import com.mycompany.model.TarjetaPropiedad;
 
 /**
  *
@@ -173,18 +174,29 @@ public class GUIAddVehicular extends javax.swing.JFrame {
             String strMonto = txtMonto.getText().trim();
             String strTasa = txtTasaInteres.getText().trim();
             String strPlazo = txtPlazoMeses.getText().trim();
-            String strFecha = txtFecha.getText().trim();
-
-            valorComercial = Double.parseDouble(txtValorComercial.getText().trim());
+            String strValorComercial = txtValorComercial.getText().trim();
             marcaVehiculo = txtMarca.getText().trim();
+
+            TarjetaPropiedad tarjetaPropiedad = new TarjetaPropiedad("IHL 123", "MOTOR-121"); //TODO: HACER QUE YA NO SEA VALOR POR DEFECTO, SE ESTA ARREGLANDO Y RECONSTRYENDO. POR AHORA ES SOLO PARA TEST
 
             idPrestamo = Integer.parseInt(strId);
             monto = Double.parseDouble(strMonto);
             tasaInteres = Double.parseDouble(strTasa);
             plazoMeses = Integer.parseInt(strPlazo);
-            fechaRegistro = LocalDate.parse(strFecha);
+            valorComercial = Double.parseDouble(strValorComercial);
+            fechaRegistro = LocalDate.now();
 
-            prestamo = new PrestamoVehicular(idPrestamo, monto, tasaInteres, plazoMeses, valorComercial, marcaVehiculo);
+            prestamo = new PrestamoVehicular(
+                    idPrestamo,
+                    monto,
+                    tasaInteres,
+                    plazoMeses,
+                    fechaRegistro,
+                    valorComercial,
+                    marcaVehiculo,
+                    tarjetaPropiedad
+            );
+
 
             ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
             servicio.agregarPrestamoVehicular(prestamo);
@@ -200,7 +212,8 @@ public class GUIAddVehicular extends javax.swing.JFrame {
             txtMarca.setText("");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al crear el prestamo vehicular: " + e);
+            JOptionPane.showMessageDialog(this,
+                    new StringBuilder("Error al crear el prestamo vehicular: ").append(e).toString());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

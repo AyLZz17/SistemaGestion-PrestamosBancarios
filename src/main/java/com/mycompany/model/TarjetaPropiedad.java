@@ -1,4 +1,4 @@
-/**
+/*
  *
  * @author AyLZz
  */
@@ -32,8 +32,12 @@ public class TarjetaPropiedad
     }
 
     public String mostrarTarjetaPropiedad() {
-        return "Tarjeta de Propiedad:\n" +
-                "Placa del Vehículo: " + placaVehiculo + "\n" +
-                "Número de Motor: " + numeroMotor;
+        return new StringBuilder()
+            .append("Tarjeta de Propiedad:\n")
+            .append("Placa del Vehículo: ")
+            .append(placaVehiculo)
+            .append("\nNúmero de Motor: ")
+            .append(numeroMotor)
+            .toString();
     }
 }

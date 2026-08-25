@@ -87,35 +87,7 @@ public class GUIListarHipotecario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarHipotecarioActionPerformed
-        // 1. Obtener el mapa de préstamos desde el servicio
-        Map<Integer, Prestamo> prestamos;
-        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
-        prestamos = servicio.obtenerPrestamos(); // Asegúrate de que el método se llame así
-
-// 2. Obtener el modelo de la tabla y limpiarla
-        DefaultTableModel modelo = (DefaultTableModel) tblListarHipotecario.getModel();
-        modelo.setRowCount(0); // Esto borra las filas anteriores para que no se dupliquen
-
-// 3. Recorrer el mapa y agregar las filas
-        for (Map.Entry<Integer, Prestamo> pre : prestamos.entrySet()) {
-            Integer idPrestamo = pre.getKey();
-            PrestamoHipotecario hipo = (PrestamoHipotecario) pre.getValue();
-  
-
-            // 4. Crear la fila con los datos (¡El orden debe coincidir con las columnas de tu tabla!)
-            Object[] fila = new Object[]{
-                idPrestamo, // Columna 1: ID Prestamo
-                hipo.getMonto(), // Columna 2: Monto
-                hipo.getTasaIntereses(), // Columna 3: Tasa de Interés
-                hipo.getPlazoMeses(), // Columna 4: Plazo Meses
-                hipo.getFechaRegistro(), // Columna 5: Fecha de Registro
-                hipo.getTipoInmueble(), // Columna 6: Tipo de Inmueble
-                hipo.getDireccionInmueble() // Columna 7: Dirección Inmueble
-            };
-
-            // 5. Agregar la fila a la tabla
-            modelo.addRow(fila);
-        }
+        
     }//GEN-LAST:event_btnListarHipotecarioActionPerformed
 
     /**

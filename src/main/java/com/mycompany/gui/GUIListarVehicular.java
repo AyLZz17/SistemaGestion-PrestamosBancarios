@@ -84,33 +84,7 @@ public class GUIListarVehicular extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtListarActionPerformed
-        // 1. Obtener el mapa de préstamos desde el servicio
-        Map<Integer, Prestamo> prestamos;
-        prestamos = ServicioPrestamo.getPrestamos();
 
-// 2. Obtener el modelo de la tabla y limpiarla
-        DefaultTableModel modelo = (DefaultTableModel) tblListarVehicular.getModel();
-        modelo.setRowCount(0); // Esto borra las filas anteriores para que no se dupliquen
-
-// 3. Recorrer el mapa y agregar las filas
-        for (Map.Entry<Integer, Prestamo> pre : prestamos.entrySet()) {
-            Integer idPrestamo = pre.getKey();
-            PrestamoVehicular veh = (PrestamoVehicular) pre.getValue();
-
-            // 4. Crear la fila con los datos (¡El orden debe coincidir con las columnas de tu tabla!)
-            Object[] fila = new Object[]{
-                idPrestamo, // Columna 1: ID Prestamo
-                veh.getMonto(), // Columna 2: Monto
-                veh.getTasaIntereses(), // Columna 3: Tasa de Interés
-                veh.getPlazoMeses(), // Columna 4: Plazo Meses
-                veh.getFechaRegistro(), // Columna 5: Fecha de Registro
-                veh.getValorComercial(), // Columna 6: Valor Comercial
-                veh.getMarcaVehiculo() // Columna 7: Marca Vehicular
-            };
-
-            // 5. Agregar la fila a la tabla
-            modelo.addRow(fila);
-        }
     }//GEN-LAST:event_txtListarActionPerformed
 
     /**

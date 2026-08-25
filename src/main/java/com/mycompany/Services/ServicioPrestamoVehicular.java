@@ -14,7 +14,7 @@ import com.mycompany.model.PrestamoVehicular;
 public class ServicioPrestamoVehicular 
 {
 
-    private final Map<Integer, PrestamoVehicular> prestamosVehiculares = new LinkedHashMap<>(); 
+    private static final Map<Integer, PrestamoVehicular> prestamosVehiculares = new LinkedHashMap<>(); 
     
 
     public void agregarPrestamoVehicular(PrestamoVehicular prestamoVehicular) 

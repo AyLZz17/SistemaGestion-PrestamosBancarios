@@ -57,7 +57,10 @@ public class PrestamoHipotecario extends Prestamo implements IAsegurableHipoteca
             return ((monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -plazoMeses))) + calcularSeguro();
 
         } catch (Exception e) {
-            System.err.println("Error al calcular la cuota mensual: " + e.getMessage());
+            StringBuilder mensaje = new StringBuilder();
+            mensaje.append("Error al calcular la cuota mensual: ")
+                   .append(e.getMessage());
+            System.err.println(mensaje.toString());
             return 0;
         }   
     }
