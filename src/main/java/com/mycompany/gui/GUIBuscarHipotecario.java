@@ -2,22 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.model.gui;
+package com.mycompany.gui;
 
-import com.mycompany.model.PrestamoVehicular;
-import java.time.LocalDate;
+import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.model.PrestamoHipotecario;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Juan Pablo Valbuena
  */
-public class GUIAddVehicular extends javax.swing.JFrame {
+public class GUIBuscarHipotecario extends javax.swing.JFrame {
 
     /**
-     * Creates new form GUIAddVehicular
+     * Creates new form GUIBuscarHipotecario
      */
-    public GUIAddVehicular() {
+    public GUIBuscarHipotecario() {
         initComponents();
         setLocationRelativeTo(this);
     }
@@ -37,18 +37,18 @@ public class GUIAddVehicular extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtIdVehicular = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtIdPrestamo = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
         txtTasaInteres = new javax.swing.JTextField();
         txtPlazoMeses = new javax.swing.JTextField();
-        txtValorComercial = new javax.swing.JTextField();
-        txtMarca = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         txtFecha = new javax.swing.JTextField();
+        txtTipoInmueble = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        btnBuscarHipotecario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("GUI Add Prestamo Vehicular");
+        setTitle("GUI Buscar Prestamo Hipoetcario");
 
         jLabel1.setText("ID del Prestamo:");
 
@@ -58,34 +58,44 @@ public class GUIAddVehicular extends javax.swing.JFrame {
 
         jLabel4.setText("Plazo de Meses:");
 
-        jLabel5.setText("Valor Comercial:");
+        jLabel5.setText("Fecha de Registro: ");
 
-        jLabel6.setText("Marca del Vehiculo:");
+        jLabel6.setText("Tipo de Inmueble:");
 
-        txtIdVehicular.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setText("Direccion del Inmueble:");
+
+        txtMonto.setEditable(false);
+
+        txtTasaInteres.setEditable(false);
+
+        txtPlazoMeses.setEditable(false);
+
+        txtFecha.setEditable(false);
+
+        txtTipoInmueble.setEditable(false);
+
+        txtDireccion.setEditable(false);
+
+        btnBuscarHipotecario.setText("Buscar Prestamo Hipotecario");
+        btnBuscarHipotecario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdVehicularActionPerformed(evt);
+                btnBuscarHipotecarioActionPerformed(evt);
             }
         });
-
-        jButton1.setText("Crear Prestamo Vehicular");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Fecha de Registro:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(btnBuscarHipotecario)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel1)
@@ -93,30 +103,24 @@ public class GUIAddVehicular extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel5)
-                                .addComponent(jLabel7))
-                            .addGap(31, 31, 31)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtValorComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtIdVehicular, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                        .addComponent(txtMonto)
-                                        .addComponent(txtTasaInteres)
-                                        .addComponent(txtPlazoMeses)))
-                                .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(75, Short.MAX_VALUE))
+                                .addComponent(jLabel6))
+                            .addGap(44, 44, 44)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtIdPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                .addComponent(txtMonto)
+                                .addComponent(txtTasaInteres)
+                                .addComponent(txtPlazoMeses)
+                                .addComponent(txtFecha)
+                                .addComponent(txtTipoInmueble)))))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtIdVehicular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -131,74 +135,44 @@ public class GUIAddVehicular extends javax.swing.JFrame {
                     .addComponent(txtPlazoMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtValorComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6)
+                    .addComponent(txtTipoInmueble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(jLabel7)
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBuscarHipotecario)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdVehicularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdVehicularActionPerformed
+    private void btnBuscarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarHipotecarioActionPerformed
+        
+        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
+        PrestamoHipotecario prestamo = servicio.buscarPorId(Integer.parseInt(txtIdPrestamo.getText()));
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int idPrestamo;
-        double monto;
-        double tasaInteres;
-        int plazoMeses;
-        LocalDate fechaRegistro;
+        if (prestamo != null) {
 
-        double valorComercial;
-        String marcaVehiculo;
+            txtMonto.setText(String.valueOf(prestamo.getMonto()));
+            txtTasaInteres.setText(String.valueOf(prestamo.getTasaIntereses()));
+            txtPlazoMeses.setText(String.valueOf(prestamo.getPlazoMeses()));
+            txtFecha.setText(String.valueOf(prestamo.getFechaRegistro()));
+            txtTipoInmueble.setText(prestamo.getTipoInmueble());
+            txtDireccion.setText(prestamo.getDireccionInmueble());
 
-        PrestamoVehicular prestamo;
+        } else {
 
-        try {
-            String strId = txtIdVehicular.getText().trim();
-            String strMonto = txtMonto.getText().trim();
-            String strTasa = txtTasaInteres.getText().trim();
-            String strPlazo = txtPlazoMeses.getText().trim();
-            String strFecha = txtFecha.getText().trim();
+            JOptionPane.showMessageDialog(this, "Préstamo Hipotecario no Encontrado/Registrado");
 
-            valorComercial = Double.parseDouble(txtValorComercial.getText().trim());
-            marcaVehiculo = txtMarca.getText().trim();
-
-            idPrestamo = Integer.parseInt(strId);
-            monto = Double.parseDouble(strMonto);
-            tasaInteres = Double.parseDouble(strTasa);
-            plazoMeses = Integer.parseInt(strPlazo);
-            fechaRegistro = LocalDate.parse(strFecha);
-
-            prestamo = new PrestamoVehicular(idPrestamo, monto, tasaInteres, plazoMeses, fechaRegistro, valorComercial, marcaVehiculo);
-
-            ServicioPrestamo.addPrestamo(prestamo);
-
-            JOptionPane.showMessageDialog(this, "¡Préstamo vehicular creado exitosamente!");
-
-            txtIdVehicular.setText("");
-            txtMonto.setText("");
-            txtTasaInteres.setText("");
-            txtPlazoMeses.setText("");
-            txtFecha.setText("");
-            txtValorComercial.setText("");
-            txtMarca.setText("");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al crear el prestamo vehicular: " + e);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBuscarHipotecarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,26 +191,26 @@ public class GUIAddVehicular extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIAddVehicular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIBuscarHipotecario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIAddVehicular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIBuscarHipotecario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIAddVehicular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIBuscarHipotecario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIAddVehicular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIBuscarHipotecario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIAddVehicular().setVisible(true);
+                new GUIBuscarHipotecario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnBuscarHipotecario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -244,12 +218,12 @@ public class GUIAddVehicular extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtFecha;
-    private javax.swing.JTextField txtIdVehicular;
-    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtIdPrestamo;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtPlazoMeses;
     private javax.swing.JTextField txtTasaInteres;
-    private javax.swing.JTextField txtValorComercial;
+    private javax.swing.JTextField txtTipoInmueble;
     // End of variables declaration//GEN-END:variables
 }

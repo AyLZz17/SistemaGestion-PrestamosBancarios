@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.model.gui;
+package com.mycompany.gui;
 
-import com.mycompany.model.PrestamoVehicular;
 import javax.swing.JOptionPane;
+
+import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.model.PrestamoVehicular;
 
 /**
  *
@@ -158,7 +160,8 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPlazoMesesActionPerformed
 
     private void btnBuscarVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVehicularActionPerformed
-        PrestamoVehicular prestamo = ServicioPrestamo.buscarPrestamo(Integer.parseInt(txtIdPrestamo.getText()));
+        ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
+        PrestamoVehicular prestamo = servicio.buscarPorId(Integer.parseInt(txtIdVehiculo.getText()));
 
         if (prestamo != null) {
 

@@ -9,13 +9,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 
-import com.mycompany.model.Prestamo;
 import com.mycompany.model.PrestamoVehicular;
 
-/**
- *
- * @author AyLZz
- */
 public class ServicioPrestamoVehicular 
 {
 

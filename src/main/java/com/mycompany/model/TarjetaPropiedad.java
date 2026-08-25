@@ -1,3 +1,8 @@
+/**
+ *
+ * @author AyLZz
+ */
+
 package com.mycompany.model;
 
 public class TarjetaPropiedad 

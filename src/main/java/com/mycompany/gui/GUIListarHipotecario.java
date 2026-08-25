@@ -2,12 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.model.gui;
+package com.mycompany.gui;
 
+import java.util.Map;
+
+import javax.swing.table.DefaultTableModel;
+
+import com.mycompany.Services.ServicioPrestamoHipotecario;
 import com.mycompany.model.Prestamo;
 import com.mycompany.model.PrestamoHipotecario;
-import java.util.Map;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -86,7 +89,8 @@ public class GUIListarHipotecario extends javax.swing.JFrame {
     private void btnListarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarHipotecarioActionPerformed
         // 1. Obtener el mapa de préstamos desde el servicio
         Map<Integer, Prestamo> prestamos;
-        prestamos = ServicioPrestamo.getPrestamos(); // Asegúrate de que el método se llame así
+        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
+        prestamos = servicio.obtenerPrestamos(); // Asegúrate de que el método se llame así
 
 // 2. Obtener el modelo de la tabla y limpiarla
         DefaultTableModel modelo = (DefaultTableModel) tblListarHipotecario.getModel();

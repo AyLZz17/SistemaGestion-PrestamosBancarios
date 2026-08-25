@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.model.gui;
+package com.mycompany.gui;
 
+import com.mycompany.Services.ServicioPrestamoHipotecario;
 import com.mycompany.model.PrestamoHipotecario;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -179,9 +180,10 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             plazoMeses = Integer.parseInt(strPlazo);
             fechaRegistro = LocalDate.parse(strFecha);
 
-            prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, fechaRegistro, tipoInmueble, direccionInmueble);
+            prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, tipoInmueble, direccionInmueble);
 
-            ServicioPrestamo.addPrestamo(prestamo);
+            ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
+            servicio.agregarPrestamoHipotecario(prestamo);
 
             JOptionPane.showMessageDialog(this, "¡Préstamo hipotecario creado exitosamente!");
 
