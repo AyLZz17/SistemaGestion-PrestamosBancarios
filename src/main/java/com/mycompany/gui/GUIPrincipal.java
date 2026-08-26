@@ -37,11 +37,17 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        mnuCrear = new javax.swing.JMenuItem();
-        mnuListar = new javax.swing.JMenuItem();
-        mnuBuscar = new javax.swing.JMenuItem();
-        mnuEliminar = new javax.swing.JMenuItem();
+        mnuCrearHipotecario = new javax.swing.JMenuItem();
+        mnuListarHipotecario = new javax.swing.JMenuItem();
+        mnuBuscarHipotecario = new javax.swing.JMenuItem();
+        mnuEliminarHipotecario = new javax.swing.JMenuItem();
+        mnuCuotaMensual = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        mnuCrearVehicular = new javax.swing.JMenuItem();
+        mnuListarVehicular = new javax.swing.JMenuItem();
+        mnuBuscarVehicular = new javax.swing.JMenuItem();
+        mnuEliminarVehicular = new javax.swing.JMenuItem();
+        mnuCuotaMensual1 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
@@ -70,41 +76,90 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jMenu4.setText("Prestamo Hipotecario");
 
-        mnuCrear.setText("Crear");
-        mnuCrear.addActionListener(new java.awt.event.ActionListener() {
+        mnuCrearHipotecario.setText("Crear");
+        mnuCrearHipotecario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuCrearActionPerformed(evt);
+                mnuCrearHipotecarioActionPerformed(evt);
             }
         });
-        jMenu4.add(mnuCrear);
+        jMenu4.add(mnuCrearHipotecario);
 
-        mnuListar.setText("Listar");
-        mnuListar.addActionListener(new java.awt.event.ActionListener() {
+        mnuListarHipotecario.setText("Listar");
+        mnuListarHipotecario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuListarActionPerformed(evt);
+                mnuListarHipotecarioActionPerformed(evt);
             }
         });
-        jMenu4.add(mnuListar);
+        jMenu4.add(mnuListarHipotecario);
 
-        mnuBuscar.setText("Buscar");
-        mnuBuscar.addActionListener(new java.awt.event.ActionListener() {
+        mnuBuscarHipotecario.setText("Buscar");
+        mnuBuscarHipotecario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuBuscarActionPerformed(evt);
+                mnuBuscarHipotecarioActionPerformed(evt);
             }
         });
-        jMenu4.add(mnuBuscar);
+        jMenu4.add(mnuBuscarHipotecario);
 
-        mnuEliminar.setText("Eliminar");
-        mnuEliminar.addActionListener(new java.awt.event.ActionListener() {
+        mnuEliminarHipotecario.setText("Eliminar");
+        mnuEliminarHipotecario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuEliminarActionPerformed(evt);
+                mnuEliminarHipotecarioActionPerformed(evt);
             }
         });
-        jMenu4.add(mnuEliminar);
+        jMenu4.add(mnuEliminarHipotecario);
+
+        mnuCuotaMensual.setText("Cuota Mensual");
+        mnuCuotaMensual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCuotaMensualActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mnuCuotaMensual);
 
         jMenuBar2.add(jMenu4);
 
         jMenu5.setText("Prestamo Vehicular");
+
+        mnuCrearVehicular.setText("Crear");
+        mnuCrearVehicular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCrearVehicularActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mnuCrearVehicular);
+
+        mnuListarVehicular.setText("Listar");
+        mnuListarVehicular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuListarVehicularActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mnuListarVehicular);
+
+        mnuBuscarVehicular.setText("Buscar");
+        mnuBuscarVehicular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBuscarVehicularActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mnuBuscarVehicular);
+
+        mnuEliminarVehicular.setText("Eliminar");
+        mnuEliminarVehicular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuEliminarVehicularActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mnuEliminarVehicular);
+
+        mnuCuotaMensual1.setText("Cuota Mensual");
+        mnuCuotaMensual1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCuotaMensual1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mnuCuotaMensual1);
+
         jMenuBar2.add(jMenu5);
 
         jMenu6.setText("Ayuda");
@@ -143,25 +198,55 @@ public class GUIPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Desarrollado por Juan Pablo Valbuena, Andres Felipe Sanchez y Daniel Ayala");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void mnuCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCrearActionPerformed
+    private void mnuCrearHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCrearHipotecarioActionPerformed
         GUIAddHipotecario gui = new GUIAddHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_mnuCrearActionPerformed
+    }//GEN-LAST:event_mnuCrearHipotecarioActionPerformed
 
-    private void mnuListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuListarActionPerformed
+    private void mnuListarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuListarHipotecarioActionPerformed
         GUIListarHipotecario gui = new GUIListarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_mnuListarActionPerformed
+    }//GEN-LAST:event_mnuListarHipotecarioActionPerformed
 
-    private void mnuBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBuscarActionPerformed
+    private void mnuBuscarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBuscarHipotecarioActionPerformed
         GUIBuscarHipotecario gui = new GUIBuscarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_mnuBuscarActionPerformed
+    }//GEN-LAST:event_mnuBuscarHipotecarioActionPerformed
 
-    private void mnuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEliminarActionPerformed
+    private void mnuEliminarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEliminarHipotecarioActionPerformed
         GUIEliminarHipotecario gui = new GUIEliminarHipotecario();
         gui.setVisible(true);
-    }//GEN-LAST:event_mnuEliminarActionPerformed
+    }//GEN-LAST:event_mnuEliminarHipotecarioActionPerformed
+
+    private void mnuCrearVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCrearVehicularActionPerformed
+        GUIAddVehicular gui = new GUIAddVehicular();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuCrearVehicularActionPerformed
+
+    private void mnuListarVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuListarVehicularActionPerformed
+        GUIListarVehicular gui = new GUIListarVehicular();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuListarVehicularActionPerformed
+
+    private void mnuBuscarVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBuscarVehicularActionPerformed
+        GUIBuscarVehicular gui = new GUIBuscarVehicular();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuBuscarVehicularActionPerformed
+
+    private void mnuEliminarVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEliminarVehicularActionPerformed
+        GUIEliminarVehicular gui = new GUIEliminarVehicular();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuEliminarVehicularActionPerformed
+
+    private void mnuCuotaMensualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCuotaMensualActionPerformed
+        GUICuotasMensaulesHipotecario gui = new GUICuotasMensaulesHipotecario();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuCuotaMensualActionPerformed
+
+    private void mnuCuotaMensual1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCuotaMensual1ActionPerformed
+        GUICuotasMensaulesVehicular gui = new GUICuotasMensaulesVehicular();
+        gui.setVisible(true);
+    }//GEN-LAST:event_mnuCuotaMensual1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,9 +295,15 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem mnuBuscar;
-    private javax.swing.JMenuItem mnuCrear;
-    private javax.swing.JMenuItem mnuEliminar;
-    private javax.swing.JMenuItem mnuListar;
+    private javax.swing.JMenuItem mnuBuscarHipotecario;
+    private javax.swing.JMenuItem mnuBuscarVehicular;
+    private javax.swing.JMenuItem mnuCrearHipotecario;
+    private javax.swing.JMenuItem mnuCrearVehicular;
+    private javax.swing.JMenuItem mnuCuotaMensual;
+    private javax.swing.JMenuItem mnuCuotaMensual1;
+    private javax.swing.JMenuItem mnuEliminarHipotecario;
+    private javax.swing.JMenuItem mnuEliminarVehicular;
+    private javax.swing.JMenuItem mnuListarHipotecario;
+    private javax.swing.JMenuItem mnuListarVehicular;
     // End of variables declaration//GEN-END:variables
 }

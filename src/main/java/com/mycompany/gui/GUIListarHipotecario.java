@@ -4,12 +4,9 @@
  */
 package com.mycompany.gui;
 
-import java.util.Map;
-
 import javax.swing.table.DefaultTableModel;
 
 import com.mycompany.Services.ServicioPrestamoHipotecario;
-import com.mycompany.model.Prestamo;
 import com.mycompany.model.PrestamoHipotecario;
 
 /**
@@ -87,7 +84,22 @@ public class GUIListarHipotecario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarHipotecarioActionPerformed
-        
+        DefaultTableModel modelo = (DefaultTableModel) tblListarHipotecario.getModel();
+        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
+
+        modelo.setRowCount(0);
+
+        for (PrestamoHipotecario prestamo : servicio.obtenerPrestamos()) {
+            modelo.addRow(new Object[] {
+                prestamo.getIdPrestamo(),
+                prestamo.getMonto(),
+                prestamo.getTasaIntereses(),
+                prestamo.getPlazoMeses(),
+                prestamo.getFechaRegistro(),
+                prestamo.getTipoInmueble(),
+                prestamo.getDireccionInmueble()
+            });
+        }
     }//GEN-LAST:event_btnListarHipotecarioActionPerformed
 
     /**

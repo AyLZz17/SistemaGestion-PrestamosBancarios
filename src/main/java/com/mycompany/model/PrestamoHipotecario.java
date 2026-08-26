@@ -1,5 +1,7 @@
 package com.mycompany.model;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author AyLZz
@@ -11,10 +13,11 @@ public class PrestamoHipotecario extends Prestamo implements IAsegurableHipoteca
     private String tipoInmueble;
     private String direccionInmueble;
 
-    public PrestamoHipotecario(int idPrestamo, double monto, double tasaIntereses, int plazoMeses, String tipoInmueble, 
-        String direccionInmueble) 
-    {
-        super(idPrestamo, monto, tasaIntereses, plazoMeses, null);
+    
+
+    public PrestamoHipotecario(int idPrestamo, double monto, double tasaIntereses, int plazoMeses,
+            LocalDate fechaRegistro, String tipoInmueble, String direccionInmueble) {
+        super(idPrestamo, monto, tasaIntereses, plazoMeses, fechaRegistro);
         this.tipoInmueble = tipoInmueble;
         this.direccionInmueble = direccionInmueble;
     }

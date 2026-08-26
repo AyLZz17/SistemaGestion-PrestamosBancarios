@@ -158,8 +158,6 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             String strMonto = txtMonto.getText().trim();
             String strTasa = txtTasaInteres.getText().trim();
             String strPlazo = txtPlazoMeses.getText().trim();
-            
-
             tipoInmueble = txtTipoInmueble.getText().trim();
             direccionInmueble = txtDireccionInmueble.getText().trim();
 
@@ -167,9 +165,11 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
             monto = Double.parseDouble(strMonto);
             tasaInteres = Double.parseDouble(strTasa);
             plazoMeses = Integer.parseInt(strPlazo);
+            LocalDate fecha = LocalDate.now();
+            
             
 
-            prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, tipoInmueble, direccionInmueble);
+            prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, fecha, tipoInmueble, direccionInmueble);
 
             ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
             servicio.agregarPrestamoHipotecario(prestamo);
