@@ -48,6 +48,10 @@ public class GUIAddVehicular extends javax.swing.JFrame {
         txtValorComercial = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        txtPlaca = new javax.swing.JTextField();
+        txtNumeroMotor = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GUI Add Prestamo Vehicular");
@@ -77,36 +81,40 @@ public class GUIAddVehicular extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Placa Vehiculo:");
+
+        jLabel8.setText("Numero inscrito Motor:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtValorComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdVehicular, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(txtMonto)
-                            .addComponent(txtTasaInteres)
-                            .addComponent(txtPlazoMeses))))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtIdVehicular, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMonto, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTasaInteres, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPlazoMeses)
+                    .addComponent(txtValorComercial)
+                    .addComponent(txtMarca)
+                    .addComponent(txtPlaca)
+                    .addComponent(txtNumeroMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,9 +143,17 @@ public class GUIAddVehicular extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtNumeroMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -153,21 +169,25 @@ public class GUIAddVehicular extends javax.swing.JFrame {
         double tasaInteres;
         int plazoMeses;
         LocalDate fechaRegistro;
-
         double valorComercial;
         String marcaVehiculo;
+        String placa;
+        String numeroMotor;
 
         PrestamoVehicular prestamo;
 
         try {
+            
             String strId = txtIdVehicular.getText().trim();
             String strMonto = txtMonto.getText().trim();
             String strTasa = txtTasaInteres.getText().trim();
             String strPlazo = txtPlazoMeses.getText().trim();
             String strValorComercial = txtValorComercial.getText().trim();
             marcaVehiculo = txtMarca.getText().trim();
+            numeroMotor = txtNumeroMotor.getText().trim();
+            placa = txtPlaca.getText().trim();            
 
-            TarjetaPropiedad tarjetaPropiedad = new TarjetaPropiedad("IHL 123", "MOTOR-121"); //TODO: HACER QUE YA NO SEA VALOR POR DEFECTO, SE ESTA ARREGLANDO Y RECONSTRYENDO. POR AHORA ES SOLO PARA TEST
+            TarjetaPropiedad tarjetaPropiedad = new TarjetaPropiedad(placa, numeroMotor); 
 
             idPrestamo = Integer.parseInt(strId);
             monto = Double.parseDouble(strMonto);
@@ -249,9 +269,13 @@ public class GUIAddVehicular extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtIdVehicular;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtMonto;
+    private javax.swing.JTextField txtNumeroMotor;
+    private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPlazoMeses;
     private javax.swing.JTextField txtTasaInteres;
     private javax.swing.JTextField txtValorComercial;

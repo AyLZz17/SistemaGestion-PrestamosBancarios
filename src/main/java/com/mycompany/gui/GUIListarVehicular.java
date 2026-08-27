@@ -4,10 +4,10 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.model.Prestamo;
-import com.mycompany.model.PrestamoVehicular;
-import java.util.Map;
 import javax.swing.table.DefaultTableModel;
+
+import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.model.PrestamoVehicular;
 
 /**
  *
@@ -41,13 +41,13 @@ public class GUIListarVehicular extends javax.swing.JFrame {
 
         tblListarVehicular.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID Prestamo", "Monto", "Tasa Interes", "Plazo Meses", "Fecha Registro", "Valor Comercial", "Marca Vehiculo"
+                "ID Prestamo", "Monto", "Tasa Interes", "Plazo Meses", "Fecha Registro", "Valor Comercial", "Marca Vehiculo", "Placa", "Numero Motor"
             }
         ));
         jScrollPane1.setViewportView(tblListarVehicular);
@@ -64,11 +64,13 @@ public class GUIListarVehicular extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtListar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(620, 620, 620)
+                .addComponent(txtListar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,6 +86,30 @@ public class GUIListarVehicular extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtListarActionPerformed
+
+        DefaultTableModel modelo = (DefaultTableModel) tblListarVehicular.getModel();
+        ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
+
+        modelo.setRowCount(0);
+
+        for (PrestamoVehicular  prestamo : servicio.obtenerPrestamos()) {
+            modelo.addRow(new Object[] {
+                prestamo.getIdPrestamo(),
+                prestamo.getMonto(),
+                prestamo.getTasaIntereses(),
+                prestamo.getPlazoMeses(),
+                prestamo.getFechaRegistro(),
+                prestamo.getValorComercial(),
+                prestamo.getMarcaVehiculo(),
+                prestamo.getTarjetaPropiedad() != null
+                    ? prestamo.getTarjetaPropiedad().getPlacaVehiculo()
+                    : "",
+                prestamo.getTarjetaPropiedad() != null
+                    ? prestamo.getTarjetaPropiedad().getNumeroMotor()
+                    : ""
+                
+            });
+        }
 
     }//GEN-LAST:event_txtListarActionPerformed
 

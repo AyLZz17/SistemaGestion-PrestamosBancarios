@@ -195,7 +195,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        JOptionPane.showMessageDialog(this, "Desarrollado por Juan Pablo Valbuena, Andres Felipe Sanchez y Daniel Ayala");
+        JOptionPane.showMessageDialog(this, "Desarrollado por Daniel Ayala \n"
+                + "Version 1.0\n"
+                + "2026","Acerca de", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void mnuCrearHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCrearHipotecarioActionPerformed

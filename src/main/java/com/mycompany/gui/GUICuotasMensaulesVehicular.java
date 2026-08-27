@@ -39,8 +39,6 @@ public class GUICuotasMensaulesVehicular extends javax.swing.JFrame {
         txtValorCuota = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-
         jLabel1.setText("ID del Prestamo:");
 
         btnBuscarVehicular.setText("Buscar Prestamo Vehicular");

@@ -47,6 +47,10 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
         txtValorComercial = new javax.swing.JTextField();
         txtMarcaVehiculo = new javax.swing.JTextField();
         btnBuscarVehicular = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtPlaca = new javax.swing.JTextField();
+        txtNumeroMotor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,35 +92,53 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("Placa Vehiculo:");
+
+        jLabel9.setText("Numero inscrito Motor:");
+
+        txtPlaca.setEditable(false);
+
+        txtNumeroMotor.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(41, 41, 41)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtPlaca)
+                                .addComponent(txtNumeroMotor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(23, 23, 23)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7))
+                            .addGap(28, 28, 28)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtIdVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                .addComponent(txtMonto)
+                                .addComponent(txtTasaInteres)
+                                .addComponent(txtPlazoMeses)
+                                .addComponent(txtFecha)
+                                .addComponent(txtValorComercial)
+                                .addComponent(txtMarcaVehiculo))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(txtMonto)
-                            .addComponent(txtTasaInteres)
-                            .addComponent(txtPlazoMeses)
-                            .addComponent(txtFecha)
-                            .addComponent(txtValorComercial)
-                            .addComponent(txtMarcaVehiculo)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(104, 104, 104)
                         .addComponent(btnBuscarVehicular)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,9 +171,17 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtMarcaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtNumeroMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnBuscarVehicular)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,7 +203,8 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
             txtFecha.setText(String.valueOf(prestamo.getFechaRegistro()));
             txtValorComercial.setText(String.valueOf(prestamo.getValorComercial()));
             txtMarcaVehiculo.setText(prestamo.getMarcaVehiculo());
-
+            txtPlaca.setText(prestamo.getTarjetaPropiedad() != null ? prestamo.getTarjetaPropiedad().getPlacaVehiculo() : "");
+            txtNumeroMotor.setText(prestamo.getTarjetaPropiedad() != null ? prestamo.getTarjetaPropiedad().getNumeroMotor() : "");
         } else {
 
             JOptionPane.showMessageDialog(this, "Préstamo Vehicular no Encontrado/Registrado");
@@ -225,10 +256,14 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtIdVehiculo;
     private javax.swing.JTextField txtMarcaVehiculo;
     private javax.swing.JTextField txtMonto;
+    private javax.swing.JTextField txtNumeroMotor;
+    private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPlazoMeses;
     private javax.swing.JTextField txtTasaInteres;
     private javax.swing.JTextField txtValorComercial;

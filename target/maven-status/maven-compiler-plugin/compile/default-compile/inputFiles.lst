@@ -1,18 +1,19 @@
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIAddHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIAddVehicular.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIBuscarHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIBuscarVehicular.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUICuotasMensaulesHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIEliminarHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIEliminarVehicular.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIListarHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIListarVehicular.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\gui\GUIPrincipal.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\model\IAsegurableHipoteca.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\model\Prestamo.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\model\PrestamoHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\model\PrestamoVehicular.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\model\TarjetaPropiedad.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\pocprestamos\POCPrestamos.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\Services\ServicioPrestamoHipotecario.java
-D:\DISEÑO SOLUCIONES\Sistema-Gestion-Prestamos-Bancos\src\main\java\com\mycompany\Services\ServicioPrestamoVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/Services/ServicioPrestamoHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/Services/ServicioPrestamoVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIAddHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIAddVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIBuscarHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIBuscarVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUICuotasMensaulesHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUICuotasMensaulesVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIEliminarHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIEliminarVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIListarHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIListarVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIPrincipal.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/IAsegurableHipoteca.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/Prestamo.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/PrestamoHipotecario.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/PrestamoVehicular.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/TarjetaPropiedad.java
+/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/pocprestamos/POCPrestamos.java

@@ -12,6 +12,7 @@ public class PrestamoHipotecario extends Prestamo implements IAsegurableHipoteca
     
     private String tipoInmueble;
     private String direccionInmueble;
+    private static final double TASA_SEGURO_ANUAL = 0.005; // 0.5% anual
 
     
 
@@ -40,8 +41,12 @@ public class PrestamoHipotecario extends Prestamo implements IAsegurableHipoteca
 
     @Override
     public double calcularSeguro() {
-        // TODO: Implementación del cálculo del seguro
-        return 0;
+        if (getMonto() <= 0) {
+            return 0;
+        }
+
+        return (getMonto() * TASA_SEGURO_ANUAL) / 12;
+        
     }
 
     @Override
