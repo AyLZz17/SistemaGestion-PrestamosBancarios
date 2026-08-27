@@ -4,7 +4,7 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.controller.PrestamoHipotecarioController;
 import com.mycompany.model.PrestamoHipotecario;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author Juan Pablo Valbuena
  */
 public class GUIAddHipotecario extends javax.swing.JFrame {
+    private final PrestamoHipotecarioController controlador = new PrestamoHipotecarioController();
 
     /**
      * Creates new form GUIAddHipotecario
@@ -171,8 +172,7 @@ public class GUIAddHipotecario extends javax.swing.JFrame {
 
             prestamo = new PrestamoHipotecario(idPrestamo, monto, tasaInteres, plazoMeses, fecha, tipoInmueble, direccionInmueble);
 
-            ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
-            servicio.agregarPrestamoHipotecario(prestamo);
+            controlador.agregar(prestamo);
 
             JOptionPane.showMessageDialog(this, "¡Préstamo hipotecario creado exitosamente!");
 

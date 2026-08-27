@@ -6,7 +6,7 @@ package com.mycompany.gui;
 
 import javax.swing.table.DefaultTableModel;
 
-import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.controller.PrestamoHipotecarioController;
 import com.mycompany.model.PrestamoHipotecario;
 
 /**
@@ -14,6 +14,7 @@ import com.mycompany.model.PrestamoHipotecario;
  * @author Juan Pablo Valbuena
  */
 public class GUIListarHipotecario extends javax.swing.JFrame {
+    private final PrestamoHipotecarioController controlador = new PrestamoHipotecarioController();
 
     /**
      * Creates new form GUIListarHipotecario
@@ -85,11 +86,9 @@ public class GUIListarHipotecario extends javax.swing.JFrame {
 
     private void btnListarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarHipotecarioActionPerformed
         DefaultTableModel modelo = (DefaultTableModel) tblListarHipotecario.getModel();
-        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
-
         modelo.setRowCount(0);
 
-        for (PrestamoHipotecario prestamo : servicio.obtenerPrestamos()) {
+        for (PrestamoHipotecario prestamo : controlador.listar()) {
             modelo.addRow(new Object[] {
                 prestamo.getIdPrestamo(),
                 prestamo.getMonto(),

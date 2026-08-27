@@ -6,7 +6,7 @@ package com.mycompany.gui;
 
 import javax.swing.JOptionPane;
 
-import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.controller.PrestamoVehicularController;
 import com.mycompany.model.PrestamoVehicular;
 import com.mycompany.model.TarjetaPropiedad;
 
@@ -15,6 +15,7 @@ import com.mycompany.model.TarjetaPropiedad;
  * @author Juan Pablo Valbuena
  */
 public class GUIEliminarVehicular extends javax.swing.JFrame {
+    private final PrestamoVehicularController controlador = new PrestamoVehicularController();
 
     /**
      * Creates new form GUIEliminarVehicular
@@ -205,8 +206,7 @@ public class GUIEliminarVehicular extends javax.swing.JFrame {
 
         try {
             // 2. Eliminar el préstamo por ID
-            ServicioPrestamoVehicular prestamoVehicularService = new ServicioPrestamoVehicular();
-            boolean eliminado = prestamoVehicularService.eliminar(Integer.parseInt(txtIdVehicular.getText().trim()));
+            boolean eliminado = controlador.eliminarSeleccionado();
 
             if (eliminado) {
                 JOptionPane.showMessageDialog(this, "Préstamo Vehicular eliminado exitosamente");
@@ -250,8 +250,8 @@ public class GUIEliminarVehicular extends javax.swing.JFrame {
 
         try {
             // 2. Buscar el préstamo por ID
-            ServicioPrestamoVehicular prestamoVehicularService = new ServicioPrestamoVehicular();
-            PrestamoVehicular prestamo = prestamoVehicularService.buscarPorId(Integer.parseInt(txtIdVehicular.getText().trim()));
+                PrestamoVehicular prestamo = controlador.buscarParaEliminar(
+                    Integer.parseInt(txtIdVehicular.getText().trim()));
 
             if (prestamo != null) {
                 // 3. Mostrar los detalles del préstamo en los campos de texto
@@ -260,7 +260,7 @@ public class GUIEliminarVehicular extends javax.swing.JFrame {
                 txtPlazoPrestamo.setText(String.valueOf(prestamo.getPlazoMeses()));
                 txtValorVehiculo.setText(String.valueOf(prestamo.getValorComercial()));
                 txtMArcaVehiculo.setText(prestamo.getMarcaVehiculo());
-                txtPlacaVehiculo.setText(placa.getPlacaVehiculo());
+                txtPlacaVehiculo.setText(placa == null ? "" : placa.getPlacaVehiculo());
                 txtFecha.setText(String.valueOf(prestamo.getFechaRegistro()));
                 
             } else {

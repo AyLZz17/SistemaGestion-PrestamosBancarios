@@ -4,7 +4,7 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.controller.PrestamoHipotecarioController;
 import com.mycompany.model.PrestamoHipotecario;
 import javax.swing.JOptionPane;
 
@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author Juan Pablo Valbuena
  */
 public class GUIBuscarHipotecario extends javax.swing.JFrame {
+    private final PrestamoHipotecarioController controlador = new PrestamoHipotecarioController();
 
     /**
      * Creates new form GUIBuscarHipotecario
@@ -160,8 +161,7 @@ public class GUIBuscarHipotecario extends javax.swing.JFrame {
 
     private void btnBuscarHipotecarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarHipotecarioActionPerformed
         
-        ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
-        PrestamoHipotecario prestamo = servicio.buscarPorId(Integer.parseInt(txtIdPrestamo.getText()));
+        PrestamoHipotecario prestamo = controlador.buscar(Integer.parseInt(txtIdPrestamo.getText().trim()));
 
         if (prestamo != null) {
 

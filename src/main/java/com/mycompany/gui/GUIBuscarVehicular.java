@@ -6,7 +6,7 @@ package com.mycompany.gui;
 
 import javax.swing.JOptionPane;
 
-import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.controller.PrestamoVehicularController;
 import com.mycompany.model.PrestamoVehicular;
 
 /**
@@ -14,6 +14,7 @@ import com.mycompany.model.PrestamoVehicular;
  * @author Juan Pablo Valbuena
  */
 public class GUIBuscarVehicular extends javax.swing.JFrame {
+    private final PrestamoVehicularController controlador = new PrestamoVehicularController();
 
     /**
      * Creates new form GUIBuscarVehicular
@@ -192,8 +193,7 @@ public class GUIBuscarVehicular extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPlazoMesesActionPerformed
 
     private void btnBuscarVehicularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVehicularActionPerformed
-        ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
-        PrestamoVehicular prestamo = servicio.buscarPorId(Integer.parseInt(txtIdVehiculo.getText()));
+        PrestamoVehicular prestamo = controlador.buscar(Integer.parseInt(txtIdVehiculo.getText().trim()));
 
         if (prestamo != null) {
 

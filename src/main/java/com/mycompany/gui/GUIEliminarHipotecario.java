@@ -6,7 +6,7 @@ package com.mycompany.gui;
 
 import javax.swing.JOptionPane;
 
-import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.controller.PrestamoHipotecarioController;
 import com.mycompany.model.PrestamoHipotecario;
 
 /**
@@ -14,6 +14,7 @@ import com.mycompany.model.PrestamoHipotecario;
  * @author Juan Pablo Valbuena
  */
 public class GUIEliminarHipotecario extends javax.swing.JFrame {
+    private final PrestamoHipotecarioController controlador = new PrestamoHipotecarioController();
 
     /**
      * Creates new form GUIEliminarHipotecario
@@ -189,8 +190,7 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
 
         try {
             // 2. Eliminar el préstamo por ID
-            ServicioPrestamoHipotecario prestamoHipotecarioService = new ServicioPrestamoHipotecario();
-            boolean eliminado = prestamoHipotecarioService.eliminar(Integer.parseInt(txtIdVehicular.getText().trim()));
+            boolean eliminado = controlador.eliminarSeleccionado();
 
             if (eliminado) {
                 JOptionPane.showMessageDialog(this, "Préstamo Hipotecario eliminado exitosamente");
@@ -221,8 +221,8 @@ public class GUIEliminarHipotecario extends javax.swing.JFrame {
 
         try {
             // 2. Buscar el préstamo por ID
-            ServicioPrestamoHipotecario prestamoHipotecarioService = new ServicioPrestamoHipotecario();
-            PrestamoHipotecario prestamo = prestamoHipotecarioService.buscarPorId(Integer.parseInt(txtIdVehicular.getText().trim()));
+                PrestamoHipotecario prestamo = controlador.buscarParaEliminar(
+                    Integer.parseInt(txtIdVehicular.getText().trim()));
 
             if (prestamo != null) {
                 // 3. Mostrar los detalles del préstamo en los campos de texto

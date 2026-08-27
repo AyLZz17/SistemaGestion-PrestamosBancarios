@@ -6,7 +6,7 @@ package com.mycompany.gui;
 
 import javax.swing.table.DefaultTableModel;
 
-import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.controller.PrestamoVehicularController;
 import com.mycompany.model.PrestamoVehicular;
 
 /**
@@ -14,6 +14,7 @@ import com.mycompany.model.PrestamoVehicular;
  * @author Juan Pablo Valbuena
  */
 public class GUIListarVehicular extends javax.swing.JFrame {
+    private final PrestamoVehicularController controlador = new PrestamoVehicularController();
 
     /**
      * Creates new form GUIListarVehicular
@@ -88,11 +89,9 @@ public class GUIListarVehicular extends javax.swing.JFrame {
     private void txtListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtListarActionPerformed
 
         DefaultTableModel modelo = (DefaultTableModel) tblListarVehicular.getModel();
-        ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
-
         modelo.setRowCount(0);
 
-        for (PrestamoVehicular  prestamo : servicio.obtenerPrestamos()) {
+        for (PrestamoVehicular prestamo : controlador.listar()) {
             modelo.addRow(new Object[] {
                 prestamo.getIdPrestamo(),
                 prestamo.getMonto(),

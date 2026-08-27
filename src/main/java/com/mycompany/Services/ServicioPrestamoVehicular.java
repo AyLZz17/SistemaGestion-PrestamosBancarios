@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 
 import com.mycompany.model.PrestamoVehicular;
 
-public class ServicioPrestamoVehicular 
+public class ServicioPrestamoVehicular implements IPrestamoVehicularService
 {
 
     private static final Map<Integer, PrestamoVehicular> prestamosVehiculares = new LinkedHashMap<>(); 

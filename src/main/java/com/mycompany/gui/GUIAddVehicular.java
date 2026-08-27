@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 import javax.swing.JOptionPane;
 
-import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.controller.PrestamoVehicularController;
 import com.mycompany.model.PrestamoVehicular;
 import com.mycompany.model.TarjetaPropiedad;
 
@@ -17,6 +17,7 @@ import com.mycompany.model.TarjetaPropiedad;
  * @author Juan Pablo Valbuena
  */
 public class GUIAddVehicular extends javax.swing.JFrame {
+    private final PrestamoVehicularController controlador = new PrestamoVehicularController();
 
     /**
      * Creates new form GUIAddVehicular
@@ -208,8 +209,7 @@ public class GUIAddVehicular extends javax.swing.JFrame {
             );
 
 
-            ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
-            servicio.agregarPrestamoVehicular(prestamo);
+            controlador.agregar(prestamo);
 
             JOptionPane.showMessageDialog(this, "¡Préstamo vehicular creado exitosamente!");
 

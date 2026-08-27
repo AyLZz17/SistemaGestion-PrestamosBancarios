@@ -1,19 +1,23 @@
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/Services/ServicioPrestamoHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/Services/ServicioPrestamoVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIAddHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIAddVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIBuscarHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIBuscarVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUICuotasMensaulesHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUICuotasMensaulesVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIEliminarHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIEliminarVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIListarHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIListarVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/gui/GUIPrincipal.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/IAsegurableHipoteca.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/Prestamo.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/PrestamoHipotecario.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/PrestamoVehicular.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/model/TarjetaPropiedad.java
-/home/AyLZz/Escritorio/REPOSITORIOS PRIVADOS/DISEÑO SOLUCIONES/SistemaGestion-PrestamosBancarios/src/main/java/com/mycompany/pocprestamos/POCPrestamos.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\controller\PrestamoHipotecarioController.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\controller\PrestamoVehicularController.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIAddHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIAddVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIBuscarHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIBuscarVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUICuotasMensaulesHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUICuotasMensaulesVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIEliminarHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIEliminarVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIListarHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIListarVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\gui\GUIPrincipal.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\model\IAsegurableHipoteca.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\model\Prestamo.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\model\PrestamoHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\model\PrestamoVehicular.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\model\TarjetaPropiedad.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\pocprestamos\POCPrestamos.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\Services\IPrestamoHipotecarioService.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\Services\IPrestamoVehicularService.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\Services\ServicioPrestamoHipotecario.java
+C:\Users\Unibague\Downloads\XDNT\SistemaGestion-PrestamosBancarios\src\main\java\com\mycompany\Services\ServicioPrestamoVehicular.java

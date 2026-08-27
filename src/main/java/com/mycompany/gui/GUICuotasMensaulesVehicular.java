@@ -4,7 +4,7 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.Services.ServicioPrestamoVehicular;
+import com.mycompany.controller.PrestamoVehicularController;
 import com.mycompany.model.PrestamoVehicular;
 import javax.swing.JOptionPane;
 
@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author UNIBAGUE
  */
 public class GUICuotasMensaulesVehicular extends javax.swing.JFrame {
+    private final PrestamoVehicularController controlador = new PrestamoVehicularController();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUICuotasMensaulesVehicular.class.getName());
 
@@ -91,18 +92,12 @@ public class GUICuotasMensaulesVehicular extends javax.swing.JFrame {
 
         try {
             int idPrestamo = Integer.parseInt(txtIdPrestamo.getText().trim());
-            ServicioPrestamoVehicular servicio = new ServicioPrestamoVehicular();
-            PrestamoVehicular prestamo = servicio.buscarPorId(idPrestamo);
-
-            if (prestamo == null) {
-                JOptionPane.showMessageDialog(this, "Préstamo hipotecario no encontrado/registrado");
-                return;
-            }
-
-            double cuotaMensual = prestamo.calcularCuotaMensual();
+            double cuotaMensual = controlador.calcularCuota(idPrestamo);
             txtValorCuota.setText(String.valueOf(cuotaMensual));
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Ingrese un ID de préstamo válido");
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
 
         

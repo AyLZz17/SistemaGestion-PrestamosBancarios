@@ -4,7 +4,7 @@
  */
 package com.mycompany.gui;
 
-import com.mycompany.Services.ServicioPrestamoHipotecario;
+import com.mycompany.controller.PrestamoHipotecarioController;
 import com.mycompany.model.PrestamoHipotecario;
 import javax.swing.JOptionPane;
 
@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author UNIBAGUE
  */
 public class GUICuotasMensaulesHipotecario extends javax.swing.JFrame {
+    private final PrestamoHipotecarioController controlador = new PrestamoHipotecarioController();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUICuotasMensaulesHipotecario.class.getName());
 
@@ -92,18 +93,12 @@ public class GUICuotasMensaulesHipotecario extends javax.swing.JFrame {
 
         try {
             int idPrestamo = Integer.parseInt(txtIdPrestamo.getText().trim());
-            ServicioPrestamoHipotecario servicio = new ServicioPrestamoHipotecario();
-            PrestamoHipotecario prestamo = servicio.buscarPorId(idPrestamo);
-
-            if (prestamo == null) {
-                JOptionPane.showMessageDialog(this, "Préstamo hipotecario no encontrado/registrado");
-                return;
-            }
-
-            double cuotaMensual = prestamo.calcularCuotaMensual();
+            double cuotaMensual = controlador.calcularCuota(idPrestamo);
             txtValorCuota.setText(String.valueOf(cuotaMensual));
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Ingrese un ID de préstamo válido");
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
 
         

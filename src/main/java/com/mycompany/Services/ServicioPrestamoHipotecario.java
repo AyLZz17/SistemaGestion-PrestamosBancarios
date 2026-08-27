@@ -11,7 +11,7 @@ import com.mycompany.model.PrestamoHipotecario;
  *
  * @author AyLZz
  */
-public class ServicioPrestamoHipotecario {
+public class ServicioPrestamoHipotecario implements IPrestamoHipotecarioService {
 
     private static final Map<Integer, PrestamoHipotecario> prestamosHipotecarios = new LinkedHashMap<>();
 
